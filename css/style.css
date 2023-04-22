@@ -126,8 +126,24 @@ footer {
     color: #fff;
 }
 
+/* Sobre Nosotros */
+
+.carousel-img, .carousel-slide {
+    max-height: 750px;
+    border-radius: .3rem;
+}
+
+h5 {
+    color: rgb(100, 255, 255);
+}
+
+.carousel-text {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 /* Contacto */
-.banner-contacto {
+
+.banner-contacto, .banner-servicios {
     height: 50vh;
     background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgb(0, 0, 0))
     ,url(../images/hero.jpg);
@@ -146,20 +162,68 @@ footer {
     border-radius: 1rem;
 }
 
+/* Servicios */
 
-/* Sobre Nosotros */
-
-.carousel-img, .carousel-slide {
-    max-height: 750px;
-    border-radius: .3rem;
+.banner-servicios {
+    background-image: linear-gradient(90deg, rgb(0,0,0), rgba(77,77,77,0.6))
+    ,url('../images/hero.jpg');
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
+.banner-servicios h1 {
+    font-size: 5rem;
+    margin: 2rem 1rem;
+}
+.cards-servicios-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 
-h5 {
+}
+.cards {
+    border-radius: .2rem;
+    background-color: rgb(62, 74, 112);
+    padding: 1rem;
+    gap: 1rem;
+    margin-top: 1rem;
+    display: flex;
+}
+.cards img {
+    width: 50%;
+    border-radius: .2rem;
+
+}
+.service-title {
+    font-family: 'Anton', sans-serif;
+    color: rgb(108, 147, 164);
+}
+.card-info {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-info p {
+    font-weight: bold;
+    color: black;
+}
+.card-info a {
+    text-decoration: none;
+    font-family: 'Jockey One', sans-serif;
+    background-color: rgb(108, 147, 164);
+    padding: .5rem;
+    color: rgb(0, 0, 0);    
+    align-self: flex-end;
+    border: 2px solid black;
+}
+.card-info a:hover {
     color: rgb(100, 255, 255);
-}
-
-.carousel-text {
-    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
+    border: 2px solid rgb(100, 255, 255);
+    text-shadow: 2px 2px 10px rgb(100, 255, 255), 2px 2px 20px rgb(100, 255, 255);
+    transform: scale(1.1);
+    transition: .5s;
 }
 
 /* Medias Querys */
@@ -174,6 +238,9 @@ h5 {
     .cards-home {
         margin: 0 auto !important;
     }
+    .cards-servicios-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 576px) {
@@ -183,9 +250,23 @@ h5 {
         justify-content: center;
         align-items: center;
     }
-    
     .social-list, .footer-info, .footer-social {
         padding: 0;
         margin: 0 !important;
+    }
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cards img {
+        width: 100%;
+    }
+    .card-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-info a {
+        align-self: center;
     }
 }
