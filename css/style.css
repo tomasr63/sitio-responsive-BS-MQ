@@ -7,22 +7,30 @@ font-family: 'Chakra Petch', sans-serif;
 font-family: 'Jockey One', sans-serif; */
 /* ---- */
 /* Reset */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 /* Home */
+
 /* Body */
+
 body {
     background-color: #777777;
 }
+
 /* header */
+
 header {
     font-weight: bold;
     width: 100%;
 }
+
 /* Navbar */
+
 .bg-person {
     background-color: rgb(35, 31, 30);
 }
@@ -52,7 +60,9 @@ i {
 .active {
     color: rgb(62, 74, 112) !important;
 }
+
 /* hero */ 
+
 .hero {
     height: 90vh;
     background-image:linear-gradient(rgba(62,74,112,0.5), rgba(62,74,112,0.9)), 
@@ -60,6 +70,7 @@ i {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    margin-bottom: 4rem;
 }
 .hero-info {
     height: 100%;
@@ -81,11 +92,39 @@ i {
     font-family: 'Big Shoulders Stencil Text', cursive;
     font-size: 1.2rem;
 }
+
+/* cards home */
+
 .cards-home {
-    background-color: rgb(62, 74, 112);
-    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 0;
 }
+.card-uno, .card-cuatro {
+    background-color: rgba(62,74,112,0.5);
+}
+.card-cinco, .card-dos {
+    background-color: rgba(77,77,77,0.6);
+}
+.card-tres {
+    background-color: rgba(100, 255, 255, 0.5);
+    grid-row-start: span 2;
+}
+.cards-home-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+/* .cards-home {
+    background-color: rgb(62, 74, 112);                  cards home 
+    color: black;
+} */
+
 /* Footer */
+
 footer {
     background-color: rgb(35, 31, 30);
     color: rgb(108, 147, 164);
@@ -132,11 +171,9 @@ footer {
     max-height: 750px;
     border-radius: .3rem;
 }
-
 h5 {
     color: rgb(100, 255, 255);
 }
-
 .carousel-text {
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -154,7 +191,6 @@ h5 {
     justify-content: center;
     align-items: center;
 }
-
 .formulario {
     max-width: 750px;
     background-color: rgb(62, 74, 112);
@@ -292,6 +328,8 @@ h5 {
 }
 
 /* Medias Querys */
+/*  1000px  */
+
 @media (max-width: 1000px) {
     .hero {
         margin-bottom: 4rem;
@@ -300,19 +338,45 @@ h5 {
         flex-direction: column;
         margin: 0.5rem;
     }
-    .cards-home {
+    /* .cards-home {                                           cards home    
         margin: 0 auto !important;
-    }
+    } */
     .cards-servicios-container {
         grid-template-columns: 1fr;
     }
+    .cards-home-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .card-uno {
+        order: -2;
+    }
+    .card-dos {
+        grid-column-start: span 2;
+    }
+    .card-tres {
+        order: -1;
+        grid-row-start: span 1;
+    }
 }
+
+/*  780px  */
 
 @media (max-width: 780px) {
     .nav-list {
         margin-right: 2rem !important;
     }
+    .cards-home-container {
+        grid-template-columns: 1fr;
+    }
+    .cards-home {
+        grid-column-start: span 1;
+    }
+    .card-dos {
+        order: -1;
+    }
 }
+
+/*  576px  */
 
 @media (max-width: 576px) {
     .footer-container {
@@ -354,6 +418,8 @@ h5 {
         justify-content: center;
     }
 }
+
+/*  337px  */
 
 @media (max-width: 337px) {
      .producto {
