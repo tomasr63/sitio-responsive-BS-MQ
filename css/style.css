@@ -349,6 +349,10 @@ h5 {
         max-width: 310px;
         align-self: center;
     }
+    .categorias {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 337px) {
